@@ -9,9 +9,9 @@
 import UIKit
 import CoreData
 
-class TodoListViewController: UITableViewController {
+class TodoListViewController: UITableViewController, UISearchBarDelegate {
 
-    var itemArray = [Item()]
+    var itemArray = [Item]()
     
     var selectedCategory : Category?{
         didSet{
@@ -25,7 +25,7 @@ class TodoListViewController: UITableViewController {
         super.viewDidLoad()
         
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
-        
+
     }
     
     //MARK - TableView Datasource Methods
