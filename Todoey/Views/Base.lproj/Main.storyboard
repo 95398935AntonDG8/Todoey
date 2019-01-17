@@ -8,6 +8,38 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="Mkf-Ql-2rd">
+            <objects>
+                <tableViewController id="r6k-gl-Yij" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="hxH-fe-KVN">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="A0c-cg-KHU">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="A0c-cg-KHU" id="7Z5-G7-ccP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="r6k-gl-Yij" id="AQo-11-VGh"/>
+                            <outlet property="delegate" destination="r6k-gl-Yij" id="fYM-1S-M8M"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="eNI-0R-7Xb"/>
+                    <connections>
+                        <segue destination="J7S-Y7-bE7" kind="show" id="ZBl-ou-yld"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GaA-ep-Dw3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1462" y="134"/>
+        </scene>
         <!--Todoey-->
         <scene sceneID="JKS-J9-Gf2">
             <objects>
@@ -50,7 +82,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rR1-5a-W3t" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1518" y="134"/>
+            <point key="canvasLocation" x="2218" y="134"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Tuk-g4-nlF">
@@ -67,12 +99,12 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="J7S-Y7-bE7" kind="relationship" relationship="rootViewController" id="uIR-vn-B66"/>
+                        <segue destination="r6k-gl-Yij" kind="relationship" relationship="rootViewController" id="mou-lz-Hlk"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bpL-Ec-vco" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="872.79999999999995" y="133.5832083958021"/>
+            <point key="canvasLocation" x="649" y="134"/>
         </scene>
     </scenes>
 </document>
