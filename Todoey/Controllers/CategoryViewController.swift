@@ -11,7 +11,13 @@ import CoreData
 
 class CategoryViewController: UITableViewController {
 
-    var categories = [Category]()
+    var itemArray = [Item]()
+    
+    var selectedCategory : Category? {
+        didSet{
+            loadItems()
+        }
+    }
     
     let context = (UIApplication.shared.delegate as!
         AppDelegate).persistentContainer.viewContext
@@ -32,7 +38,7 @@ class CategoryViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "AddCategoryCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CategoryCell", for: indexPath)
         
         cell.textLabel?.text = categories[indexPath.row].name
         
@@ -91,10 +97,11 @@ class CategoryViewController: UITableViewController {
         
         let action = UIAlertAction(title: "Add", style: .default) { (action) in
             
-            let newCategory = Category(context: self.context)
-            newCategory.name = textField.text!
-            
-            self.categories.append(newCategory)
+            let newCategory = Item(context: self.context)
+            newItem.title = textField.text!
+            newitem.done = false
+            newItem.parentCategory = selectedCategory
+            self.itemArray.append(newCategory)
             
             self.saveCategories()
             
